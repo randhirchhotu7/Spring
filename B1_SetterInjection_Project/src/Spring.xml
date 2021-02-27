@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--ENGINE BEAN  -->
+<bean id="eng" class="org.btm.setterInjectionApp.Engine" >
+<!-- SET VALUES OF BEAN CLASS USING SETTER INJECTION  -->
+<property name="engine_number" value="201401"></property>
+<property name="engine_power" value="27"></property>
+<property name="engine_type" value="PETROL"></property>
+</bean>
+
+<!--BMW BEAN  -->
+<bean id="bm" class="org.btm.setterInjectionApp.BmwImpl">
+<!--SET VALUES OF BMW POJO CLASS USING SETTER INJECTION  -->
+<property name="id" value="777"></property>
+<property name="colour" value="RED"></property>
+<!--FOR CLASSTYPE WE HAVE TO USE REFERENCE ATTRIBUTE INSTEAD OF VALUE  -->
+<property name="engine" ref="eng"></property>
+
+<property name="wheel">
+<list>
+<value>wheel1</value>
+<value>wheel2</value>
+<value>wheel3</value>
+<value>wheel3</value>
+</list>
+</property>
+
+</bean>
+
+<!--AUDI BEAN  -->
+<bean id="ad" class="org.btm.setterInjectionApp.AudiImpl">
+</bean>
+</beans>
