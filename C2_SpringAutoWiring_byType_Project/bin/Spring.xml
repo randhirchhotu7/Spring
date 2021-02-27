@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+							<!-- Flipkart Bean  -->
+<bean id="fpc" class="org.btm.SpringAutoWiringByType_App.FlipkartController" autowire="byType">
+</bean>
+
+							<!-- Dependency Bean  -->
+<bean id="AnyValue1" class="org.btm.SpringAutoWiringByType_App.Electronics"></bean>
+<bean id="AnyValue11" class="org.btm.SpringAutoWiringByType_App.Electronics" autowire-candidate="false"></bean>
+<!--In above line both statement have same class refernce hence we use autowire-candidate to keep one of the dependency  -->
+
+<bean id="AnyValue2" class="org.btm.SpringAutoWiringByType_App.Cosmetics"></bean>
+<bean id="AnyValue3" class="org.btm.SpringAutoWiringByType_App.Furnitures"></bean>
+</beans>
